@@ -3,8 +3,7 @@ kind: Service
 metadata:
   name: routefrontend
 spec:
-  type: ClusterIP
-  clusterIP: 10.100.100.102
+  type: LoadBalancer
   selector:
     app: routefrontend
   ports:

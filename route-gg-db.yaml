@@ -1,1 +1,23 @@
-test
+apiVersion: v1
+kind: Pod
+metadata:
+  name: route-gg-db-pod
+spec:
+  containers:
+  - name: route-gg-db-container
+    image: dlgyqja104/route-gg-db:1.14
+    ports:
+    - containerPort: 5432
+      protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s_service_db
+spec:
+  selector:
+    app: k8s_service_db
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432

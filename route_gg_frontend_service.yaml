@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: routefrontend
+spec:
+  type: ClusterIP
+  clusterIP: 10.100.100.102
+  selector:
+    app: routefrontend
+  ports:
+  - protocol: TCP
+    port: 3002
+    targetPort: 3002

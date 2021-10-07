@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: routefrontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: routefrontend
+  template:
+    metadata:
+      name: nginx-pod
+      labels:
+        app: routefrontend
+    spec:
+      containers:
+      - name: routefrontend
+        image: dlgyqja104/route-gg-frontend:1.0
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 3002
+          hostPort: 3002
+          protocol: TCP
+

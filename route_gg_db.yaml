@@ -3,12 +3,11 @@ kind: Pod
 metadata:
   name: routedb
 spec:
-  hostname: routedb
   containers:
   - name: routedb
     image: dlgyqja104/route-gg-db:1.0
     ports:
     - containerPort: 5432
+      hostIP: 100.100.0.100
+      hostPort: 5432
       protocol: TCP
-
-

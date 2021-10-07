@@ -5,8 +5,9 @@ metadata:
 spec:
   hostname: routeworker
   containers:
-  - name: routerouteworkerdb
+  - name: routeworkerdb
     image: dlgyqja104/route-gg-worker:1.0
     ports:
     - containerPort: 3000
+      hostPort: 3000
       protocol: TCP

@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Ingress
+metadata:
+  name: ingress-wildcard-host
+spec:
+  rules:
+  - host: "*.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: routefrontend
+            port:
+              number: 80
+  - host: "*.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/foo"
+        backend:
+          service:
+            name: routebackend
+            port:
+              number: 3001

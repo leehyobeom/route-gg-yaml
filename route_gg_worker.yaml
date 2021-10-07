@@ -3,11 +3,12 @@ kind: Pod
 metadata:
   name: routeworker
 spec:
-  hostname: routeworker
   containers:
   - name: routeworkerdb
     image: dlgyqja104/route-gg-worker:1.0
+    imagePullPolicy: "Always"
     ports:
     - containerPort: 3000
       hostPort: 3000
       protocol: TCP
+

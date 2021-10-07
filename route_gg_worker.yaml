@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: routeworker
+spec:
+  hostname: routeworker
+  containers:
+  - name: routerouteworkerdb
+    image: dlgyqja104/route-gg-worker:1.0
+    ports:
+    - containerPort: 3000
+      protocol: TCP
